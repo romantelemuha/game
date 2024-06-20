@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --colour: black;
+}
+body{
+    background-image: url(../img/hollowBack.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.score{
+    font-size: 3vw;
+    color: var(--colour);
+    display: flex;
+}
+.score div{
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 1vw;
+}
+.playerScore{
+    text-align: right;
+    border-right: 3px solid var(--colour);
+}
+.game{
+    display: flex;
+    justify-content: center;
+}
+.game div{
+    position: relative;
+}
+.player, .computer{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    background: white;
+    margin-right: 3vw;
+    margin-left: 3vw;
+}
+.player img{
+    width: 5vw;
+    transition: 0.7s;
+}
+.computer img{
+    width: 5vw;
+}
+.paper{
+    position: absolute;
+    bottom: 1px;
+    left: 30%;
+}
+.scisours{
+    position: absolute;
+    right: 1px;
+    top: 30%;
+}
+.rock{
+    position: absolute;
+    left: 1px;
+    top: 20%;
+    transform: rotate(106deg);
+}
+h1{
+    text-align: center;
+    color: var(--colour);
+    font-size: 3vw;
+}
+.playerPaper:active{
+   bottom: 3vw;
+}
+.playerRock:active{
+    left: 3vw;
+}
+.playerScisours:active{
+    right: 3vw;
+}
+.draw{
+    color: var(--colour);
+    text-align: center;
+    font-size: 3vw;
+    color: beige;
+    font-style: italic;
+}
+@media(max-width: 450px){
+    .game{
+        flex-direction: column;
+        align-items: center;
+    }
+    .player, .computer{
+        width: 30vw;
+        height: 30vw;
+        border-radius: 50%;
+        background: white;
+        margin-right: 3vw;
+        margin-left: 3vw;
+        margin-bottom: 3vh;
+    }
+    .player img{
+        width: 10vw;
+        transition: 0.7s;
+    }
+    .computer img{
+        width: 10vw;
+    }
+    .score{
+        font-size: 5vw;
+    }
+    h1{
+        font-size: 5vw;
+    }
+}
